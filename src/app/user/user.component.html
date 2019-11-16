@@ -1,0 +1,84 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Cadastro</h4>
+                    </div>
+                    <div class="content">
+                        <form [formGroup]="form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome *</label>
+                                        <input type="text" class="form-control" placeholder="Nome"
+                                            formControlName="nome">
+                                        <span *ngIf="valid('nome')" style="color: red; font-size: 12px">Campo
+                                            obrigatório</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Sobrenome *</label>
+                                        <input type="text" class="form-control" placeholder="Sobrenome"
+                                            formControlName="sobrenome">
+                                        <span *ngIf="valid('sobrenome')" style="color: red; font-size: 12px">Campo
+                                            obrigatório</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">E-mail</label>
+                                        <input type="email" class="form-control" placeholder="E-mail"
+                                            formControlName="email" email>
+                                        <span *ngIf="emailError" style="color: red; font-size: 12px">E-mail
+                                            inválido</span>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="perfil">Perfil</label>
+                                        <select name="Perfil" class="form-control" id="perfil" formControlName="perfil">
+                                            <option *ngFor="let perfil of perfis" [value]="perfil.id">
+                                                {{ perfil.descricao }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Endereço *</label>
+                                        <input type="text" class="form-control" placeholder="Endereço"
+                                            formControlName="endereco">
+                                        <span *ngIf="valid('endereco')" style="color: red; font-size: 12px">Campo
+                                            obrigatório</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Cidade</label>
+                                        <input type="text" class="form-control" placeholder="Cidade"
+                                            formControlName="cidade">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-fill center-block"
+                                (click)="salvar()">Salvar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

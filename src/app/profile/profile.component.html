@@ -1,0 +1,31 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Perfil</h4>
+                    </div>
+                    <div class="content">
+                        <form [formGroup]="form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Descrição *</label>
+                                        <input type="text" class="form-control" placeholder="Descrição"
+                                            formControlName="descricao">
+                                        <span *ngIf="valid('descricao')" style="color: red; font-size: 12px">Campo
+                                            obrigatório</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                        <button type="submit" class="btn btn-info btn-fill center-block" (click)="salvar()">Salvar</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

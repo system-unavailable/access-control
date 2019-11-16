@@ -1,0 +1,58 @@
+{
+  "perfil": [
+    {
+      "descricao": "Administrador",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "descricao": "Técnico"
+    },
+    {
+      "id": 3,
+      "descricao": "Consultor"
+    },
+    {
+      "descricao": "Operador",
+      "id": 4
+    }
+  ],
+  "usuario": [
+    {
+      "nome": "Teste",
+      "sobrenome": "Testando",
+      "endereco": "Rua Teste Moraes",
+      "email": "teste@gmail.com",
+      "cidade": "Araras",
+      "perfil": {
+        "descricao": "Administrador",
+        "id": 1
+      },
+      "id": 2
+    },
+    {
+      "nome": "Amaral",
+      "sobrenome": "Silva",
+      "endereco": "Av Jorge Amadeu",
+      "email": "amaral@tec.com",
+      "cidade": "Araraquara",
+      "perfil": {
+        "id": 3,
+        "descricao": "Consultor"
+      },
+      "id": 3
+    },
+    {
+      "nome": "Thiago ",
+      "sobrenome": "Santos",
+      "endereco": "Rua Amaral Tancredo",
+      "email": "tiago@email.com",
+      "cidade": "Araras",
+      "perfil": {
+        "descricao": "Administrador",
+        "id": 1
+      },
+      "id": 4
+    }
+  ]
+}

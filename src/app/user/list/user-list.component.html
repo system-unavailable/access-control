@@ -1,0 +1,44 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <div class="col-md-11">
+                <h4 class="title">Usuários</h4>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-info btn-fill" (click)="incluir()">Incluir</button>
+              </div>
+            </div>
+            <div class="content table-responsive table-full-width">
+              <table class="table table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th *ngFor="let cell of tableData?.headerRow">{{ cell }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let row of tableData?.dataRows">
+                    <td>{{row.id}}</td>
+                    <td>{{row.nome}}</td>
+                    <td>{{row.sobrenome}}</td>
+                    <td>{{row.endereco}}</td>
+                    <td>{{row.email}}</td>
+                    <td>{{row.cidade}}</td>
+                    <td>{{row.perfil?.descricao}}</td>
+                    <td>
+                      <span (click)="edit(row.id)"><i class="pi pi-pencil"
+                          style="color: blue; font-size: 20px;cursor: pointer"></i></span>
+                      <span (click)="excluir(row.id)"><i class="pi pi-times"
+                          style="color: red; font-size: 20px;cursor: pointer"></i></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
