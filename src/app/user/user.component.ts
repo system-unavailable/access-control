@@ -63,7 +63,7 @@ export class UserComponent implements OnInit {
       } else {
         this.service.salvar(obj).subscribe(() => {
           this.showNotification();
-          this.router.navigate(['user']);
+          this.router.navigate(['users']);
         });
       }
     } else {
@@ -86,7 +86,6 @@ export class UserComponent implements OnInit {
 
   showNotification() {
     $.notify({
-      icon: "pe-7s-gift",
       message: "Registro salvo com sucesso"
     }, {
       type: 'success',

@@ -12,6 +12,7 @@ declare var $: any;
 export class ProfileListComponent implements OnInit {
 
   tableData: any;
+  id: any;
 
   constructor(private service: PerfilService, private router: Router) { }
 
@@ -23,10 +24,11 @@ export class ProfileListComponent implements OnInit {
     };
   }
 
-  excluir(id) {
-    this.service.delete(id).subscribe(() => {
-      const index = this.tableData.dataRows.findIndex(it => it.id == id);
+  excluir() {
+    this.service.delete(this.id).subscribe(() => {
+      const index = this.tableData.dataRows.findIndex(it => it.id == this.id);
       this.tableData.dataRows.splice(index, 1);
+      $('#exampleModalCenter').modal('hide');
       this.showNotification();
     });
   }
@@ -50,6 +52,11 @@ export class ProfileListComponent implements OnInit {
         align: 'right'
       }
     });
+  }
+
+  abrirModal(id: any): void {
+    this.id = id;
+    $('#exampleModalCenter').modal('show');
   }
 
 

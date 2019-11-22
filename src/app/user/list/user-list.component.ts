@@ -13,6 +13,7 @@ declare var $: any;
 export class UserListComponent implements OnInit {
 
   tableData: any;
+  id: any;
 
   constructor(private service: UserService, private router: Router) { }
 
@@ -24,10 +25,11 @@ export class UserListComponent implements OnInit {
     };
   }
 
-  excluir(id) {
-    this.service.delete(id).subscribe(() => {
-      const index = this.tableData.dataRows.findIndex(it => it.id == id);
+  excluir() {
+    this.service.delete(this.id).subscribe(() => {
+      const index = this.tableData.dataRows.findIndex(it => it.id == this.id);
       this.tableData.dataRows.splice(index, 1);
+      $('#exampleModalCenter').modal('hide');
       this.showNotification();
     });
   }
@@ -44,13 +46,18 @@ export class UserListComponent implements OnInit {
     $.notify({
       message: "Registro excluído com sucesso"
     }, {
-      type: 'danger',
+      type: 'success',
       timer: 1000,
       placement: {
         from: 'top',
         align: 'right'
       }
     });
+  }
+
+  abrirModal(id: any): void {
+    this.id = id;
+    $('#exampleModalCenter').modal('show');
   }
 
 }
